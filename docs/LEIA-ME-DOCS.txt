@@ -1,0 +1,26 @@
+# Pasta docs/ — Material de Estudo
+
+Esta pasta deve conter os PDFs do material de estudo com os nomes EXATOS abaixo.
+
+ARQUIVOS NECESSÁRIOS:
+=====================
+
+1_Artigo_e2025-0042_v59_n4_2025_PT.pdf
+coso-erm-sumario.pdf
+decreto-11529-2023.pdf
+decreto-9203-2017.pdf
+enap-grc.pdf
+flaviazd-lai.pdf
+handbook-iso31000.pdf
+ibgc-codigo.pdf
+iso-31000-abnt.pdf
+manual-compliance.pdf
+manual-integridade-ocde.pdf
+panorama-lai.pdf
+power-organized-uncertainty.pdf
+reed-avaliacao-lai.pdf
+relatorio-avaliacao-decreto-9203.pdf
+revisao-sistematica-lai.pdf
+
+PASTA mapas/ — incluída mas sem os arquivos PNG.
+Adicione os 18 arquivos de mapas mentais em docs/mapas/ conforme LEIA-ME-MAPAS.txt.

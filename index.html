@@ -3,13 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>GRC & LAI — Guia de Estudos</title>
+<title>GRC & LAI — Guia de Estudos v10.1</title>
 <link rel="manifest" href="manifest.json">
+<script>
+// Manifest inline com ícone maskable (bordas arredondadas no PWA)
+(function(){
+  const manifest = {
+    "name": "Guia GRC & LAI — 60 dias",
+    "short_name": "GRC & LAI",
+    "description": "Compliance Informacional na APF · PPGGIPP/UnB",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#1e1b4b",
+    "theme_color": "#1e1b4b",
+    "orientation": "portrait",
+    "icons": [
+      {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable any"},
+      {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable any"}
+    ]
+  };
+  const blob = new Blob([JSON.stringify(manifest)], {type:'application/manifest+json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.querySelector('link[rel="manifest"]');
+  if(link) link.href = url;
+})();
+</script>
 <meta name="theme-color" content="#1e1b4b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="GRC &amp; LAI">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
+<style>
+  /* ícone PWA — bordas arredondadas */
+  link[rel="apple-touch-icon"] { border-radius: 22% !important; }
+  .app-icon, img[src*="icon-192"], img[src*="icon-512"] {
+    border-radius: 22% !important;
+    overflow: hidden;
+  }
+</style>
 <style>
   :root {
     --bg: #f0f2f8;
@@ -611,7 +642,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
     <img src="data:image/jpeg;base64,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" alt="Guia de Estudos" class="header-logo-img">
     <div class="header-text-block">
       <div class="header-label">PPGGIPP · Casa Civil · UnB</div>
-      <div class="header-title">Guia GRC &amp; LAI — 60 dias</div>
+      <div class="header-title">Guia GRC &amp; LAI — 60 dias · v10.1</div>
       <div class="header-sub">Compliance Informacional na APF</div>
       <div class="progress-block">
         <div class="progress-top">
@@ -694,7 +725,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 
 <script>
 
-const DAYMAPAS = {"1": "mapa-01-grc-triade-articulada-enap.png", "2": "mapa-01-grc-triade-articulada-enap.png", "3": "mapa-01-grc-triade-articulada-enap.png", "4": "mapa-01-grc-triade-articulada-enap.png", "5": "mapa-01-grc-triade-articulada-enap.png", "6": "mapa-04-decreto-9203-marco-normativo.png", "7": "mapa-01-grc-triade-articulada-enap.png", "8": "mapa-02-iso31000-tres-componentes.png", "9": "mapa-02-iso31000-tres-componentes.png", "10": "mapa-03-coso-erm-2017-cinco-componentes.png", "11": "mapa-03-coso-erm-2017-cinco-componentes.png", "12": "mapa-10-power-organized-uncertainty-tensao.png", "13": "mapa-10-power-organized-uncertainty-tensao.png", "14": "mapa-10-power-organized-uncertainty-tensao.png", "15": "mapa-08-compliance-programa-tres-linhas.png", "16": "mapa-08-compliance-programa-tres-linhas.png", "17": "mapa-08-compliance-programa-tres-linhas.png", "18": "mapa-08-compliance-programa-tres-linhas.png", "19": "mapa-08-compliance-programa-tres-linhas.png", "20": "mapa-09-ocde-integridade-publica-principios.png", "21": "mapa-09-ocde-integridade-publica-principios.png", "22": "mapa-11-revisao-sistematica-lai-silva-matta.png", "23": "mapa-12-panorama-lai-esferas-governo.png", "24": "mapa-13-reed-avaliacao-lai-brasileira.png", "25": "mapa-14-klein-gestao-riscos-accountability.png", "26": "mapa-04-decreto-9203-marco-normativo.png"};
+const DAYMAPAS = {"1": "mapa-01-grc-triade-articulada-enap.png", "2": "mapa-18-tcu-referencial-governanca-igg.png", "3": "mapa-18-tcu-referencial-governanca-igg.png", "4": "mapa-03-coso-erm-2017-cinco-componentes.png", "5": "mapa-02-iso31000-tres-componentes.png", "6": "mapa-08-compliance-programa-tres-linhas.png", "7": "mapa-01-grc-triade-articulada-enap.png", "8": "mapa-09-ocde-integridade-publica-principios.png", "9": "mapa-02-iso31000-tres-componentes.png", "10": "mapa-03-coso-erm-2017-cinco-componentes.png", "11": "mapa-04-decreto-9203-marco-normativo.png", "12": "mapa-05-decreto-11529-governanca-atualizada.png", "13": "mapa-16-lai-lei-12527-aneis-conceituais.png", "14": "mapa-17-decreto-7724-fluxo-pedido-recurso.png", "15": "mapa-07-ibgc-principios-setor-publico.png", "16": "mapa-07-ibgc-principios-setor-publico.png", "17": "mapa-08-compliance-programa-tres-linhas.png", "18": "mapa-08-compliance-programa-tres-linhas.png", "19": "mapa-09-ocde-integridade-publica-principios.png", "20": "mapa-09-ocde-integridade-publica-principios.png", "21": "mapa-09-ocde-integridade-publica-principios.png", "22": "mapa-10-power-organized-uncertainty-tensao.png", "23": "mapa-10-power-organized-uncertainty-tensao.png", "24": "mapa-11-revisao-sistematica-lai-silva-matta.png", "25": "mapa-13-reed-avaliacao-lai-brasileira.png", "26": "mapa-14-klein-gestao-riscos-accountability.png", "27": "mapa-10-power-organized-uncertainty-tensao.png", "28": "mapa-12-panorama-lai-esferas-governo.png", "29": "mapa-06-relatorio-avaliacao-decreto-9203.png", "30": "mapa-05-decreto-11529-governanca-atualizada.png", "31": "mapa-15-iso31000-roadmap-implementacao.png", "32": "mapa-15-iso31000-roadmap-implementacao.png", "33": "mapa-03-coso-erm-2017-cinco-componentes.png", "34": "mapa-17-decreto-7724-fluxo-pedido-recurso.png", "35": "mapa-15-iso31000-roadmap-implementacao.png", "36": "mapa-01-grc-triade-articulada-enap.png", "37": "mapa-12-panorama-lai-esferas-governo.png", "38": "mapa-14-klein-gestao-riscos-accountability.png", "39": "mapa-01-grc-triade-articulada-enap.png", "40": "mapa-14-klein-gestao-riscos-accountability.png", "41": "mapa-08-compliance-programa-tres-linhas.png", "42": "mapa-01-grc-triade-articulada-enap.png", "43": "mapa-18-tcu-referencial-governanca-igg.png", "44": "mapa-07-ibgc-principios-setor-publico.png", "45": "mapa-11-revisao-sistematica-lai-silva-matta.png", "46": "mapa-06-relatorio-avaliacao-decreto-9203.png", "47": "mapa-17-decreto-7724-fluxo-pedido-recurso.png", "48": "mapa-01-grc-triade-articulada-enap.png", "49": "mapa-12-panorama-lai-esferas-governo.png", "50": "mapa-02-iso31000-tres-componentes.png", "51": "mapa-16-lai-lei-12527-aneis-conceituais.png", "52": "mapa-15-iso31000-roadmap-implementacao.png", "53": "mapa-01-grc-triade-articulada-enap.png", "54": "mapa-18-tcu-referencial-governanca-igg.png", "55": "mapa-14-klein-gestao-riscos-accountability.png", "56": "mapa-01-grc-triade-articulada-enap.png", "57": "mapa-12-panorama-lai-esferas-governo.png", "58": "mapa-13-reed-avaliacao-lai-brasileira.png", "59": "mapa-15-iso31000-roadmap-implementacao.png", "60": "mapa-01-grc-triade-articulada-enap.png"};
 
 function buildMapaBtn(dayNum, cor, fundo) {
   var f = DAYMAPAS[dayNum];
@@ -762,72 +793,72 @@ const phases = [
        obra:"ENAP — Governança, Gestão de Riscos e Integridade (240 p.)",
        leitura:"p. 11-26 (~16 p.)\n\nIntrodução (p. 11-15)\nA governança (p. 17-20): conceito, modos de coordenação — hierarquia, mercado, redes (Quadro 1, p. 18)\nA governança corporativa (p. 21-26): personalidade jurídica, separação propriedade/gestão, modelo de agência",
        fichamento:"Monte o Quadro 1 (p. 18) com anotações sobre cada modo de coordenação. Como cada modo aparece na estrutura da Casa Civil? Defina em uma frase o problema de agência e explique por que ele é central para a governança pública.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:2, title:"Governança Pública: Nova Gestão e Boa Governança",
        obra:"ENAP — Parte I (continuação)",
        leitura:"p. 27-51 (~25 p.)\n\nA governança pública (p. 27-36): metagovernança, novos papéis do Estado\nA boa governança pública (p. 37-40): desempenho e conformidade\nBoa governança das agências públicas (p. 40-51): princípios IFAC (p. 45-46), princípios OPM (p. 46-47), Quadros 3 e 4",
        fichamento:"Reproduza o Quadro 2 com comentários. Qual modelo descreve melhor a Casa Civil hoje? Liste os 7 princípios IFAC e os 6 princípios OPM; para cada um, formule uma pergunta que levanta para o processo LAI.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-18-tcu-referencial-governanca-igg.png"},
       {day:3, title:"Contexto Brasileiro e Referencial Normativo",
        obra:"ENAP — Parte I (conclusão)",
        leitura:"p. 52-95 (~44 p.)\n\nPor que aprimorar a governança (p. 52-53)\nO contexto brasileiro (p. 54-67): evolução histórica, PDRAE, marcos legais\nReferencial normativo (p. 68-77): Decreto 9.203/2017, Lei 13.303/2016, LINDB\nPrincípios, modelos e boas práticas (p. 78-95): referencial TCU, Quadros 5-9",
        fichamento:"O que os três normativos têm em comum? Anote as diferenças de escopo. Como o processo LAI se enquadra no modelo descrito? Descreva os mecanismos de liderança, estratégia e controle do referencial TCU com exemplos concretos da Casa Civil.",
-       tempo:"3h"},
+       tempo:"3h",mentalMap:"mapa-18-tcu-referencial-governanca-igg.png"},
       {day:4, title:"Gestão de Riscos: Conceito, Tipologia e COSO-ERM",
        obra:"ENAP — Parte II",
        leitura:"p. 97-120 (~24 p.)\n\nA gestão de riscos (p. 97-107): conceito, risco x incerteza, tipologia\nA GR de governança (p. 108-109)\nPor que implementar (p. 110-112)\nPadrões internacionais — COSO-ERM/GRC (p. 113-120)",
        fichamento:"Defina risco e incerteza. Quais são as tipologias de risco? Dê um exemplo de cada no processo LAI. Descreva a arquitetura COSO-ERM: 8 componentes e como se articulam.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-03-coso-erm-2017-cinco-componentes.png"},
       {day:5, title:"ISO 31000, Três Linhas de Defesa e Processo de GR",
        obra:"ENAP — Parte II (continuação)",
        leitura:"p. 121-146 (~26 p.)\n\nISO 31000:2009 (p. 121-124): princípios, estrutura, processo\nTrês linhas de defesa (p. 125-128)\nProcesso de GR (p. 129-146): comunicação, contexto, identificação, análise, avaliação, tratamento, monitoramento",
        fichamento:"Compare COSO e ISO 31000. Explique as três linhas de defesa e posicione a Casa Civil no modelo. Para cada etapa do processo de GR, dê um exemplo aplicado ao processo LAI.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-02-iso31000-tres-componentes.png"},
       {day:6, title:"Padrões Nacionais e ENAP Parte III: Integridade e Compliance",
        obra:"ENAP — Parte II (conclusão) + Parte III (início)",
        leitura:"p. 147-171 (~25 p.)\n\nPadrões nacionais (p. 147-155): GIRC, Modelo TCU\nA promoção da integridade — compliance (p. 157-162)\nPor que implementar programa de integridade (p. 163-165)\nO regime internacional anticorrupção (p. 166-171)",
        fichamento:"O que o GIRC acrescenta ao contexto brasileiro? Em que estágio de maturidade está a Casa Civil? Quais instrumentos internacionais anticorrupção existem e como se refletem no Brasil?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-08-compliance-programa-tres-linhas.png"},
       {day:7, title:"Entregável Semana 1 — Síntese GRC: Governança, Riscos e Integridade",
        obra:"ENAP — Revisão integral (p. 11-171)",
        leitura:"Releitura seletiva dos Quadros 1-9, fluxogramas e fichamentos dos dias 1-6.\n\nConceitos a consolidar:\n(1) Governança e modos de coordenação\n(2) COSO-ERM + ISO 31000 + Três Linhas\n(3) Processo de GR com exemplos LAI\n(4) Referencial normativo brasileiro\n(5) Integridade e regime internacional",
        fichamento:"ENTREGÁVEL: Escreva um parágrafo-síntese para cada um dos 5 conceitos centrais. Construa o mapa GRC: governança > riscos > integridade — articulação e posição da LAI.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:8, title:"ENAP: Pilares da Integridade, ISO 19600/37001 e Considerações Finais",
        obra:"ENAP — Parte III (p. 172-219)",
        leitura:"p. 172-219 (~48 p.)\n\nMarco regulatório nacional — CGU e TCU (p. 172-191)\nPilares do programa de integridade (p. 193-213)\nISO 19600:2014 e ISO 37001:2015 (p. 207-213)\nConsiderações Finais (p. 215-219)",
        fichamento:"Liste todos os pilares do programa de integridade. Para cada pilar: existe equivalente no processo LAI da Casa Civil? Compare CGU e TCU. O que as normas ISO 19600 e ISO 37001 acrescentam?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-09-ocde-integridade-publica-principios.png"},
       {day:9, title:"ABNT NBR ISO 31000:2018 — Gestão de Riscos: Diretrizes (integral)",
        obra:"ABNT NBR ISO 31000:2018 (~45 p.)",
        leitura:"Texto integral (~45 p.)\n\nIntrodução e Escopo | Termos e definições\nPrincípios | Estrutura: liderança, design, implementação, avaliação e melhoria\nProcesso: comunicação, escopo e contexto, avaliação, tratamento, registro e relatório",
        fichamento:"Como a versão 2018 difere da versão 2009 citada na ENAP? Quais princípios se aplicam diretamente ao processo LAI? Construa o quadro comparativo ISO 31000:2009 x ISO 31000:2018.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-02-iso31000-tres-componentes.png"},
       {day:10, title:"COSO-ERM Sumário Executivo (integral)",
        obra:"COSO-ERM — Sumário Executivo (~40 p.)",
        leitura:"Texto integral (~40 p.)\n\n8 componentes do COSO-ERM | Objetivos e estrutura do framework\nRelação COSO-ERM x COSO controles internos\nGRC: governança, risco e compliance integrados",
        fichamento:"Quais são os 8 componentes do COSO-ERM? Como ele se articula com o GRC? Diferença entre COSO-ERM e COSO de controles internos. Diagrama dos 8 componentes COSO-ERM.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-03-coso-erm-2017-cinco-componentes.png"},
       {day:11, title:"Decreto 9.203/2017 + Relatório de Avaliação",
        obra:"Decreto 9.203/2017 (integral) + Relatório Executivo de Avaliação",
        leitura:"Decreto integral (~14 p.) + Relatório seções 1-4 (~30 p.)\n\nDecreto: princípios (art. 3), diretrizes (art. 4), mecanismos (art. 5), instâncias (arts. 6-19)\nRelatório: contextualização, metodologia, resultados, avanços",
        fichamento:"Tabela 4 colunas: princípio x diretriz x mecanismo x instância responsável. O que o Relatório identifica como lacunas e barreiras? Como isso afeta o processo LAI?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-04-decreto-9203-marco-normativo.png"},
       {day:12, title:"Relatório de Governança (conclusão) + Decreto 11.529/2023",
        obra:"Relatório Executivo (seções finais) + Decreto 11.529/2023",
        leitura:"Relatório seções finais (~20 p.) + Decreto 11.529 integral (~15 p.)\n\nRecomendações do relatório\nDecreto 11.529/2023: o que alterou em relação ao Decreto 9.203/2017",
        fichamento:"O que o Decreto 11.529/2023 alterou em relação ao Decreto 9.203/2017? Como o relatório pode ter influenciado essas mudanças? Linha do tempo comparativa: 9.203 > avaliação > 11.529.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-05-decreto-11529-governanca-atualizada.png"},
       {day:13, title:"LAI: Lei 12.527/2011 e Decreto 7.724/2012 — Texto Integral",
        obra:"Lei 12.527/2011 (LAI) + Decreto 7.724/2012",
        leitura:"LAI integral (~18 p.) + Decreto 7.724 integral (~30 p.)\n\nLAI: objeto, princípios, âmbito, definições (art. 4), procedimentos, exceções\nDecreto: transparência ativa, passiva, prazos, recursos, responsabilidades, SIC",
        fichamento:"Quais os artigos centrais da LAI? O que o Decreto acrescenta em termos procedimentais? Fluxograma completo do processo LAI com base nos dois instrumentos.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-16-lai-lei-12527-aneis-conceituais.png"},
       {day:14, title:"Entregável Semana 2 — Normativos, Riscos e LAI",
        obra:"Síntese ISO 31000 + COSO-ERM + Decretos + LAI",
        leitura:"Revisão seletiva dos fichamentos e quadros da semana.\n\nConceitos a consolidar:\n(1) ISO 31000:2018 x COSO-ERM\n(2) Decretos 9.203 e 11.529 comparados\n(3) Pilares da integridade\n(4) Fluxo LAI\n(5) GRC integrado",
        fichamento:"ENTREGÁVEL: Tabela comparativa ISO 31000 x COSO-ERM (foco, estrutura, aplicação). Fluxo LAI completo. Arquitetura GRC + LAI em diagrama.",
-       tempo:"2h"}
+       tempo:"2h",mentalMap:"mapa-17-decreto-7724-fluxo-pedido-recurso.png"}
     ]
   },
   {
@@ -838,72 +869,72 @@ const phases = [
        obra:"IBGC — Código das Melhores Práticas 6.ª ed.",
        leitura:"Apresentação + Parte 1 (~25 p.)\n\nConceito de governança corporativa\nPrincípios fundamentais: transparência, equidade, prestação de contas, responsabilidade corporativa\nPapel dos proprietários",
        fichamento:"Como o IBGC define governança corporativa? Os princípios IBGC convergem com os da governança pública? Quadro comparativo: governança corporativa (IBGC) x governança pública (ENAP).",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-07-ibgc-principios-setor-publico.png"},
       {day:16, title:"IBGC: Conselho, Diretoria, Fiscalização e Transparência",
        obra:"IBGC — Código das Melhores Práticas 6.ª ed.",
        leitura:"Partes 2-6 + considerações finais (~80 p.)\n\nConselho de administração: composição, competências e responsabilidades\nDiretoria: papel e prestação de contas\nÓrgãos de fiscalização | Conflito de interesses | Transparência e disclosure\nRelatórios periódicos | Responsabilidade corporativa",
        fichamento:"Quais as responsabilidades do conselho? Há equivalente na Casa Civil? Como o IBGC trata conflito de interesses? Que paralelos existem entre transparência corporativa (IBGC) e transparência pública (LAI)?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-07-ibgc-principios-setor-publico.png"},
       {day:17, title:"Compliance Mastermind: Conceito, Histórico e Programa",
        obra:"Compliance Mastermind Vol. 1 — Cap. 1-3",
        leitura:"Capítulos 1-3 (~60 p.)\n\nConceito e histórico do compliance\nDiferença compliance público x privado\nEstrutura de um programa de compliance\nAvaliação de riscos de compliance",
        fichamento:"Como o Compliance Mastermind define compliance? Diferenças em relação à ENAP. Quais os elementos estruturais de um programa? Como a avaliação de riscos de compliance se relaciona com o processo de GR?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-08-compliance-programa-tres-linhas.png"},
       {day:18, title:"Compliance Mastermind: Treinamento, Canais, KPIs e Melhoria",
        obra:"Compliance Mastermind Vol. 1 — Cap. 4-7",
        leitura:"Capítulos 4-7 (~60 p.)\n\nTreinamento e comunicação\nCanais de denúncia e investigação interna\nMonitoramento e melhoria contínua\nKPIs e indicadores de desempenho\nIntegração do programa de compliance",
        fichamento:"Que indicadores o Compliance Mastermind propõe para medir um programa de compliance? Existe equivalente a canal de denúncia no contexto LAI? Painel de KPIs: compliance x integridade x transparência.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-08-compliance-programa-tres-linhas.png"},
       {day:19, title:"Manual de Integridade Pública da OCDE: Sistema e Prevenção",
        obra:"Manual de Integridade Pública da OCDE",
        leitura:"Capítulos iniciais-intermediários (~60 p.)\n\nConceito de integridade pública segundo a OCDE\nEstrutura do Sistema de Integridade Pública\nPrevenção x detecção x resposta\nMecanismos de controle e monitoramento",
        fichamento:"O que a OCDE entende por integridade pública? Quais os pilares do sistema de integridade? Como se aplica ao fluxo LAI da Casa Civil? Tabela: prevenção x detecção x resposta com exemplos da Casa Civil.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-09-ocde-integridade-publica-principios.png"},
       {day:20, title:"OCDE: Accountability, Cultura Organizacional e Maturidade",
        obra:"Manual de Integridade Pública da OCDE",
        leitura:"Capítulos avançados + conclusões (~60 p.)\n\nAccountability e cultura organizacional\nIndicadores de maturidade de integridade\nImplementação sustentável\nAutodiagnóstico institucional",
        fichamento:"Como a OCDE mede a maturidade do sistema de integridade? Em que nível posicionaria a Casa Civil? Radar de maturidade baseado nos indicadores da OCDE. Como implementar um sistema sustentável?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-09-ocde-integridade-publica-principios.png"},
       {day:21, title:"Entregável Semana 3 — Integridade, Compliance e OCDE",
        obra:"Síntese IBGC + Compliance Mastermind + OCDE",
        leitura:"Revisão seletiva dos fichamentos e quadros da semana.\n\nConceitos a consolidar:\n(1) Governança corporativa — princípios IBGC\n(2) Programa de compliance — estrutura e KPIs\n(3) Sistema de integridade OCDE\n(4) Prevenção-detecção-resposta\n(5) Maturidade de integridade",
        fichamento:"ENTREGÁVEL: Escreva um parágrafo para cada tema. Diagrama integrado: integridade x compliance x LAI.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-09-ocde-integridade-publica-principios.png"},
       {day:22, title:"Organized Uncertainty: Sociedade de Risco e Crítica do GRC",
        obra:"Organized Uncertainty — Michael Power (Oxford, 2007) — Cap. 1-3",
        leitura:"Prefácio + Capítulos 1-3 (~100 p.)\n\nA sociedade do risco e a incerteza organizada\nCrítica ao gerencialismo do risco\nRisco reputacional e organizacional\nRisco de primeira e segunda ordem\nPapel da auditoria",
        fichamento:"O que Power chama de incerteza organizada? Por que crítica à gestão de riscos como prática organizacional? Como distingue risco primário e risco de segunda ordem? O que é risco reputacional para organizações públicas?",
-       tempo:"3h"},
+       tempo:"3h",mentalMap:"mapa-10-power-organized-uncertainty-tensao.png"},
       {day:23, title:"Organized Uncertainty: Regulação, Controle e Limites",
        obra:"Organized Uncertainty — Power — Cap. 4-7",
        leitura:"Capítulos 4-7 (~110 p.)\n\nRisco e regulação | Limites do controle\nGoverning reputations | Making risk auditable\nDesenho de um mundo de gestão de riscos",
        fichamento:"Como Power relaciona risco e regulação? Quais os limites do controle? O que Power acrescenta ao GRC convencional? Síntese crítica integrando Power, IBGC e OCDE.",
-       tempo:"3h"},
+       tempo:"3h",mentalMap:"mapa-10-power-organized-uncertainty-tensao.png"},
       {day:24, title:"Revisão Sistemática LAI + Panorama da Literatura",
        obra:"Revisão Sistemática LAI + Artigo Panorama LAI",
        leitura:"Revisão Sistemática (~40 p.) + Artigo Panorama (~25 p.)\n\nRevisão sistemática: principais achados da literatura sobre a LAI\nPanorama: tendências, enfoques e limites dos estudos",
        fichamento:"Quais são os principais achados? Que lacunas a literatura identificou? O que ainda não foi estudado sobre processo interno, governança ou risco informacional? Liste ao menos 2 frases no formato 'Nenhum estudo examinou... porque...'",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-11-revisao-sistematica-lai-silva-matta.png"},
       {day:25, title:"Artigos Acadêmicos: Efetividade LAI e Governança Integrada",
        obra:"Artigo mvchein (REED) + Artigo 2359 (Governança Integrada)",
        leitura:"Artigo mvchein (~20 p.) + Artigo 2359 (~25 p.)\n\nAvaliação da efetividade da LAI\nGovernança integrada na APF brasileira",
        fichamento:"Como a literatura avalia efetividade da LAI? O que uma avaliação mais substantiva precisaria considerar para capturar qualidade decisória? Quais propostas teóricas dos dois artigos e sua contribuição para a dissertação?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-13-reed-avaliacao-lai-brasileira.png"},
       {day:26, title:"Artigo flaviazd: Compliance no Setor Público",
        obra:"flaviazd — Compliance no Setor Público (texto integral ~50 p.)",
        leitura:"Texto integral (~50 p.)\n\nCompliance público: fundamentos e aplicações\nEvidências empíricas na APF brasileira\nRelação entre compliance, LAI e accountability",
        fichamento:"Qual a tese central? Quais as evidências empíricas? O que o artigo contribui para o entendimento da LAI como instrumento de compliance? Fichamento acadêmico completo.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-14-klein-gestao-riscos-accountability.png"},
       {day:27, title:"Revisão — Semana 4: Power, Literatura LAI e Compliance Público",
        obra:"Síntese Power + artigos acadêmicos",
        leitura:"Revisão seletiva dos fichamentos da semana.\n\nConceitos a consolidar:\n(1) Incerteza organizada e risco reputacional\n(2) Limites do controle\n(3) Literatura sobre a LAI — achados e lacunas\n(4) Efetividade da LAI\n(5) Compliance público — evidências empíricas",
        fichamento:"Escreva um parágrafo para cada tema. Monte mapa crítico: GRC convencional x perspectiva crítica (Power) x perspectiva empírica (artigos).",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-10-power-organized-uncertainty-tensao.png"},
       {day:28, title:"Entregável Semana 4 — Síntese Integridade, Compliance e Literatura",
        obra:"Síntese do Bloco 2 completo",
        leitura:"Revisão dos mapas e diagramas produzidos no Bloco 2 (dias 15-27).\n\nConceitos a consolidar:\n(1) IBGC e governança corporativa\n(2) Compliance Mastermind — estrutura e KPIs\n(3) OCDE — sistema de integridade\n(4) Power — perspectiva crítica\n(5) Literatura sobre a LAI",
        fichamento:"ENTREGÁVEL: Tabela comparativa GRC convencional x perspectiva crítica (Power) x perspectiva internacional (OCDE). Diagrama GRC completo com todos os referenciais posicionados.",
-       tempo:"2h"}
+       tempo:"2h",mentalMap:"mapa-12-panorama-lai-esferas-governo.png"}
     ]
   },
   {
@@ -914,72 +945,72 @@ const phases = [
        obra:"PUB100464 (preview integral)",
        leitura:"Texto integral (~30 p.)\n\nConteúdo principal da publicação\nDiálogo com o Relatório de Avaliação do Decreto 9.203\nContribuições ao referencial já estudado",
        fichamento:"O que a publicação traz sobre gestão de riscos ou governança? Como dialoga com o Relatório de Avaliação do Decreto 9.203? Lista de contribuições da publicação ao referencial já estudado.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-06-relatorio-avaliacao-decreto-9203.png"},
       {day:30, title:"Análise Comparada: Decreto 9.203/2017 x Decreto 11.529/2023",
        obra:"Decreto 9.203/2017 + Decreto 11.529/2023 (releitura analítica comparada)",
        leitura:"Ambos os textos (~30 p. total)\n\nAnálise comparada artigo por artigo\nO que mudou, o que foi mantido, o que foi incluído\nImplicações para as unidades responsáveis pelo LAI",
        fichamento:"Tabela comparativa dos dois decretos por tema. Quais mudanças mais relevantes para o processo LAI? O que a comparação revela sobre a evolução da política de governança?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-05-decreto-11529-governanca-atualizada.png"},
       {day:31, title:"ENAP Parte II — Releitura Operacional: Matrizes e Aplicação LAI",
        obra:"ENAP — Parte II (releitura seletiva p. 129-155)",
        leitura:"Releitura seletiva (~30 p.)\n\nFoco nos Quadros 15-18: matriz de riscos, probabilidade, impacto, classificação\nAplicação operacional ao processo LAI da Casa Civil",
        fichamento:"Aplique a matriz de riscos a 3 eventos reais do processo LAI: evento, probabilidade, impacto e tratamento proposto. Matriz de riscos do processo LAI com 3 eventos mapeados.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-15-iso31000-roadmap-implementacao.png"},
       {day:32, title:"ISO 31000 Handbook + Aplicação Pública da Norma",
        obra:"Handbook ISO 31000 + ABNT NBR ISO 31000:2018 (releitura seletiva)",
        leitura:"Handbook integral (~30 p.) + revisão seletiva da norma\n\nHandbook: casos práticos de aplicação\nComo adaptar a norma para organizações públicas",
        fichamento:"O que o Handbook acrescenta à norma? Como adaptar para organizações públicas? Quadro: norma x handbook x aplicação pública.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-15-iso31000-roadmap-implementacao.png"},
       {day:33, title:"COSO-ERM — Releitura Aplicada ao Processo LAI",
        obra:"COSO-ERM — Sumário Executivo (releitura aplicada)",
        leitura:"Releitura seletiva (~20 p.)\n\nFoco no Componente 3: Desempenho — identificação, avaliação e priorização de riscos\nAplicação ao processo LAI: categorias de risco informacional",
        fichamento:"Como o Componente Desempenho do COSO se aplica ao processo LAI? Identifique 3 riscos informacionais e aplique a lógica de priorização COSO.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-03-coso-erm-2017-cinco-componentes.png"},
       {day:34, title:"LAI — Releitura Estratégica: Governança da Informação",
        obra:"Lei 12.527/2011 + Decreto 7.724/2012 (releitura analítica)",
        leitura:"Releitura estratégica dos dois instrumentos (~20 p.)\n\nFoco em: governança da informação, processo decisório, accountability\nCitações relevantes que conectam governança, informação, transparência e acesso",
        fichamento:"Liste citações com referência que conectam governança pública, informação, transparência e acesso. Essas serão as âncoras normativas da dissertação. Fluxograma atualizado do processo LAI.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-17-decreto-7724-fluxo-pedido-recurso.png"},
       {day:35, title:"Entregável Semana 5 — Síntese Normativa e Operacional",
        obra:"Síntese normativos + ENAP aplicado + COSO/ISO releitura",
        leitura:"Revisão seletiva dos fichamentos e quadros da semana.\n\nConceitos a consolidar:\n(1) PUB100464 — contribuições\n(2) Decretos comparados\n(3) Matriz de riscos aplicada ao LAI\n(4) ISO e COSO aplicados ao setor público\n(5) LAI como governança da informação",
        fichamento:"ENTREGÁVEL: Síntese de 2 páginas: normativos + riscos aplicados + LAI como governança da informação.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-15-iso31000-roadmap-implementacao.png"},
       {day:36, title:"Integração GRC: Tríade Governança, Riscos e Integridade",
        obra:"ENAP — Releitura integradora (seletiva)",
        leitura:"Releitura seletiva: Quadros 8-9, Esquema 1, Parte III principais (~20 p.)\n\nGRC como tríade articulada\nLAI como instrumento de transparência e accountability",
        fichamento:"Síntese de 1 página sobre como governança, gestão de riscos e integridade se articulam como tríade GRC. Onde a LAI se insere? Diagrama GRC completo com a LAI posicionada.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:37, title:"Construção da Matriz de Lacunas",
        obra:"Revisão integral das fichas (dias 1-36)",
        leitura:"Releitura de todos os fichamentos produzidos nos dias 1-36.\n\nFoco em: o que a literatura responde, responde parcialmente, não responde",
        fichamento:"Matriz com 4 colunas: (1) a literatura já responde (2) responde parcialmente (3) não responde (4) onde meu tema entra. Este documento será o argumento de originalidade da dissertação.",
-       tempo:"3h"},
+       tempo:"3h",mentalMap:"mapa-12-panorama-lai-esferas-governo.png"},
       {day:38, title:"Refinamento do Problema de Pesquisa",
        obra:"Revisão da Proposta + fichas dos Entregáveis",
        leitura:"Releia a proposta de dissertação + fichas dos dias 7, 14, 21, 28 e 35.\n\nFoco em: tensão intelectual, lacuna empírica, contribuição esperada",
        fichamento:"Escreva 3 versões do problema de pesquisa: uma mais ampla, uma mais específica, uma intermediária. Qual captura melhor a tensão intelectual do projeto?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-14-klein-gestao-riscos-accountability.png"},
       {day:39, title:"Mapa do Referencial Teórico",
        obra:"Fichas das Semanas 1-5",
        leitura:"Releitura das fichas conceituais de governança, risco, compliance e integridade (seletiva).\n\nFoco em: autores, conceitos-chave, articulações entre eles",
        fichamento:"Diagrama do referencial teórico: três eixos — GRC x Governança da Informação x LAI — com autores e conceitos principais de cada e setas de articulação.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:40, title:"Revisão — Semana 6: Síntese Analítica e Originalidade",
        obra:"Síntese analítica do programa",
        leitura:"Revisão dos mapas, matrizes e diagramas produzidos nas semanas 5-6.\n\nConceitos a consolidar:\n(1) Tríade GRC\n(2) Matriz de lacunas\n(3) Problema de pesquisa refinado\n(4) Referencial teórico mapeado\n(5) LAI como governança da informação",
        fichamento:"Escreva um parágrafo para cada tema. Monte o argumento de originalidade: o que nenhum estudo anterior examinou que sua dissertação vai examinar.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-14-klein-gestao-riscos-accountability.png"},
       {day:41, title:"Casos Reais da Casa Civil: Aplicação Prática do GRC",
        obra:"Situações reais do trabalho + documentos institucionais",
        leitura:"Análise de casos práticos do trabalho real da Casa Civil (~20 p.)\n\nDois casos concretos do fluxo LAI\nAplicação dos conceitos GRC estudados",
        fichamento:"Analise dois casos reais: como o GRC se aplica? Quais conceitos têm incidência direta? O que falta para que o processo seja plenamente aderente ao modelo GRC? Estudo de caso estruturado: problema x referencial x aplicação x lacuna.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-08-compliance-programa-tres-linhas.png"},
       {day:42, title:"Entregável Semana 6 — Originalidade, Referencial e Aplicação Prática",
        obra:"Síntese do Bloco 3 completo",
        leitura:"Revisão dos mapas e diagramas produzidos no Bloco 3 (dias 29-41).\n\nConceitos a consolidar:\n(1) Matrizes de riscos aplicadas\n(2) Tríade GRC e LAI\n(3) Matriz de lacunas\n(4) Problema de pesquisa refinado\n(5) Casos reais analisados",
        fichamento:"ENTREGÁVEL: Diagrama GRC final. Matriz de lacunas consolidada. Problema de pesquisa na versão intermediária com 1 parágrafo de justificativa.",
-       tempo:"2h"}
+       tempo:"2h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"}
     ]
   },
   {
@@ -990,92 +1021,92 @@ const phases = [
        obra:"Revisão seletiva — ENAP p. 11-155 + ISO 31000 + COSO-ERM",
        leitura:"Revisão seletiva (~25 p.)\n\nGovernança e modos de coordenação\nCOSO-ERM + ISO 31000 + Três Linhas\nProcesso de GR com exemplos LAI\nReferencial normativo brasileiro",
        fichamento:"Reescreva de memória os 5 conceitos centrais de governança. Redesenhe o fluxo completo do processo de GR com exemplos LAI. Compare com fichamentos originais e identifique lacunas.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-18-tcu-referencial-governanca-igg.png"},
       {day:44, title:"Revisão — Bloco 2 (parte 1): IBGC, Compliance e OCDE",
        obra:"Revisão seletiva — IBGC + Compliance Mastermind + OCDE",
        leitura:"Revisão seletiva (~25 p.)\n\nPrincípios IBGC e transferência para o setor público\nEstrutura do programa de compliance e KPIs\nSistema de integridade OCDE e maturidade",
        fichamento:"Reescreva os princípios IBGC e compare com os da governança pública. Liste os elementos do programa de compliance e posicione a Casa Civil no radar de maturidade OCDE.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-07-ibgc-principios-setor-publico.png"},
       {day:45, title:"Revisão — Bloco 2 (parte 2): Power e Literatura LAI",
        obra:"Revisão seletiva — Power + artigos acadêmicos",
        leitura:"Revisão seletiva (~25 p.)\n\nIncerteza organizada, risco reputacional e limites do controle\nAchados da literatura sobre a LAI\nEfetividade e compliance público",
        fichamento:"Síntese crítica de 1 página: o que Power e a literatura sobre LAI acrescentam ao GRC convencional? Quais as lacunas que sua dissertação vai preencher?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-11-revisao-sistematica-lai-silva-matta.png"},
       {day:46, title:"Revisão — Bloco 3: Normativos Aplicados e Originalidade",
        obra:"Revisão seletiva — Decretos + ENAP aplicado + Matriz de Lacunas",
        leitura:"Revisão seletiva (~25 p.)\n\nDecretos comparados (9.203 x 11.529)\nMatriz de riscos aplicada ao LAI\nMatriz de lacunas e problema de pesquisa",
        fichamento:"Reescreva a matriz de riscos com 3 eventos LAI. Revise a matriz de lacunas. Confronte com o problema de pesquisa refinado: ainda faz sentido?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-06-relatorio-avaliacao-decreto-9203.png"},
       {day:47, title:"Revisão — LAI e Transparência: Fluxo Completo",
        obra:"Revisão normativa seletiva — LAI + Decretos + artigos acadêmicos",
        leitura:"Revisão normativa seletiva (~20 p.)\n\nLAI — estrutura e artigos centrais\nDecreto 7.724 — procedimentos\nFluxo operacional da Casa Civil",
        fichamento:"Reescreva o fluxo completo do processo LAI da Casa Civil com base em tudo que foi estudado. Identifique os 5 artigos mais relevantes para o fluxo. Identifique onde há risco, onde há controle, onde há lacuna.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-17-decreto-7724-fluxo-pedido-recurso.png"},
       {day:48, title:"Revisão — GRC Aplicado: Tríade e Diagrama Final",
        obra:"Revisão dos mapas e diagramas produzidos no programa",
        leitura:"Revisão do portfolio de mapas, quadros, fichamentos e diagramas.\n\nGovernança x riscos x integridade x LAI x transparência\nPosicionamento da Casa Civil no modelo GRC",
        fichamento:"Produza síntese de 2 páginas: GRC aplicado à APF e à Casa Civil, com posicionamento da LAI como instrumento de transparência, accountability e integridade. Diagrama GRC final e completo.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:49, title:"Entregável Semana 7 — Revisão Geral e Autoavaliação",
        obra:"Revisão geral do portfolio de estudo",
        leitura:"Revisão do portfolio completo (dias 1-48).\n\nAutodiagnóstico:\n(1) Quais são os 5 tópicos mais sólidos?\n(2) Quais são os 5 tópicos mais frágeis?",
        fichamento:"ENTREGÁVEL: Liste os 5 tópicos mais sólidos e os 5 mais frágeis. Para cada tópico frágil, identifique a fonte e a página a reler. Plano de reforço para os dias 50-52.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-12-panorama-lai-esferas-governo.png"},
       {day:50, title:"Reforço — Tópicos Frágeis (1): Governança e Riscos",
        obra:"Releitura dirigida — tópicos governança e riscos identificados no Dia 49",
        leitura:"Releitura dos trechos correspondentes (~25 p.)\n\nFoco nos pontos identificados no autodiagnóstico",
        fichamento:"Reescreva e corrija os fichamentos dos tópicos frágeis de governança e riscos. O que mudou na sua compreensão após a releitura dirigida?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-02-iso31000-tres-componentes.png"},
       {day:51, title:"Reforço — Tópicos Frágeis (2): Integridade, Compliance e LAI",
        obra:"Releitura dirigida — tópicos integridade, compliance e LAI",
        leitura:"Releitura dos trechos correspondentes (~25 p.)\n\nFoco nos pontos identificados no autodiagnóstico",
        fichamento:"Reescreva e corrija os fichamentos dos tópicos frágeis de integridade, compliance e LAI. Revise os mapas e quadros correspondentes.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-16-lai-lei-12527-aneis-conceituais.png"},
       {day:52, title:"Reforço — Conceitos de Maior Recorrência e Complexidade",
        obra:"Trechos selecionados — ENAP, ISO 31000, OCDE e LAI",
        leitura:"Trechos com maior densidade conceitual (~25 p.)\n\nConceitos com maior recorrência no programa\nDefinições que exigem maior precisão",
        fichamento:"Quadro de revisão final: conceito x definição precisa x referência x aplicação. Foco nos conceitos que apareceram em mais de um material. Flashcards dos conceitos essenciais.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-15-iso31000-roadmap-implementacao.png"},
       {day:53, title:"Síntese Interdisciplinar GRC: Mapa Teórico Final",
        obra:"Revisão de todos os referenciais e mapas",
        leitura:"Revisão do portfolio completo com foco nos mapas e diagramas.\n\nGovernança x riscos x integridade x LAI x transparência\nTodos os autores e referenciais posicionados",
        fichamento:"Produza o mapa teórico final: todos os referenciais, autores e conceitos do programa posicionados em um único diagrama. Identifique as articulações e tensões entre eles.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:54, title:"Aplicação Prática: Autodiagnóstico Institucional da Casa Civil",
        obra:"Referenciais normativos e acadêmicos estudados",
        leitura:"Releitura seletiva dos diagnósticos e matrizes aplicadas (~20 p.)\n\nFoco no autodiagnóstico da Casa Civil\nLacunas identificadas ao longo do programa",
        fichamento:"Autodiagnóstico institucional: onde a Casa Civil está em relação ao modelo GRC? Quais são as 3 principais lacunas? Quais são as 3 principais forças? O que a dissertação pode contribuir?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-18-tcu-referencial-governanca-igg.png"},
       {day:55, title:"Refinamento Final do Problema de Pesquisa e Justificativa",
        obra:"Revisão da proposta + fichamentos + matriz de lacunas",
        leitura:"Releitura da proposta de dissertação + fichamentos dos dias 37-42 (~20 p.)\n\nFoco em: tensão intelectual, lacuna empírica, contribuição esperada",
        fichamento:"Escreva a versão final do problema de pesquisa. Escreva a justificativa em 1 parágrafo. O que sua dissertação vai examinar que nenhum estudo anterior examinou?",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-14-klein-gestao-riscos-accountability.png"},
       {day:56, title:"Mapa Final do Referencial Teórico para a Dissertação",
        obra:"Fichas e mapas de todo o programa",
        leitura:"Releitura seletiva de todos os mapas e diagramas produzidos (~30 p.)\n\nFoco em: quais autores e conceitos comporão o referencial da dissertação",
        fichamento:"Diagrama final do referencial teórico da dissertação: três eixos — GRC x Governança da Informação x LAI — com autores, conceitos e articulações. Este será o esqueleto teórico da dissertação.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"},
       {day:57, title:"Entregável Semana 8 — Problema, Referencial e Contribuição",
        obra:"Síntese final do programa",
        leitura:"Revisão do portfolio completo com foco nos entregáveis (dias 7, 14, 21, 28, 35, 42, 49).\n\nConceitos a consolidar:\n(1) GRC aplicado à APF\n(2) Problema de pesquisa refinado\n(3) Referencial teórico final\n(4) Autodiagnóstico institucional\n(5) Argumento de originalidade",
        fichamento:"ENTREGÁVEL: Texto de 3 páginas — Problema de pesquisa + Justificativa + Referencial teórico + Argumento de originalidade + Contribuição esperada.",
-       tempo:"2h30"},
+       tempo:"2h30",mentalMap:"mapa-12-panorama-lai-esferas-governo.png"},
       {day:58, title:"Revisão Crítica do Entregável: Coerência e Consistência",
        obra:"Entregável do Dia 57 + referenciais de suporte",
        leitura:"Releitura crítica do texto produzido no Dia 57 (~10 p.) + trechos de suporte dos referenciais.\n\nFoco em: coerência interna, precisão conceitual, articulação dos argumentos",
        fichamento:"Identifique 3 pontos fortes e 3 pontos fracos do texto produzido. Reescreva os 3 parágrafos mais frágeis. O que ainda precisa ser aprofundado antes da qualificação?",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-13-reed-avaliacao-lai-brasileira.png"},
       {day:59, title:"Plano de Continuidade: Cronograma e Próximas Leituras",
        obra:"Proposta de dissertação + programa dos 60 dias",
        leitura:"Releitura da proposta + revisão do que ficou pendente (~15 p.)\n\nFoco em: o que ainda precisa ser lido, estudado ou aprofundado\nCronograma realista para a dissertação",
        fichamento:"Plano de continuidade: (1) 5 leituras prioritárias para os próximos 30 dias (2) cronograma com marcos da dissertação (qualificação, defesa) (3) o que este programa de 60 dias preparou e o que ainda falta preparar.",
-       tempo:"2h"},
+       tempo:"2h",mentalMap:"mapa-15-iso31000-roadmap-implementacao.png"},
       {day:60, title:"Síntese Final: 60 Dias de GRC, LAI e Governança",
        obra:"Síntese total do programa",
        leitura:"Revisão final do portfolio completo: mapas, quadros, fichamentos e entregáveis.\n\nUma página por bloco temático (4 páginas + 1 de conclusão)",
        fichamento:"SÍNTESE FINAL: Uma página por bloco temático + uma página de conclusão pessoal. O que mudou na sua compreensão sobre GRC e LAI ao longo dos 60 dias? Qual é o próximo passo concreto para a dissertação?",
-       tempo:"3h"}
+       tempo:"3h",mentalMap:"mapa-01-grc-triade-articulada-enap.png"}
     ]
   }
 ];
@@ -1138,7 +1169,13 @@ function renderBadge(dn){
 function rmAttach(dn){delete attaches['day_'+dn]; sa(); renderBadge(dn); showToast('Arquivo removido');}
 
 function exportProgress(){
-  const blob=new Blob([JSON.stringify({version:'4.0',exported:new Date().toISOString(),progress,notes,attaches},null,2)],{type:'application/json'});
+  // Coletar avaliações Gemini salvas
+  const evals={};
+  phases.forEach(ph=>ph.days.forEach(d=>{
+    const ev=localStorage.getItem('fich-eval-'+d.day);
+    if(ev){try{evals['day_'+d.day]=JSON.parse(ev);}catch(e){}}
+  }));
+  const blob=new Blob([JSON.stringify({version:'4.1',exported:new Date().toISOString(),progress,notes,attaches,evals},null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob), a=document.createElement('a');
   a.href=url; a.download='guia-grc-lai-backup-'+new Date().toISOString().slice(0,10)+'.json';
   a.click(); URL.revokeObjectURL(url); showToast('Progresso exportado!');
@@ -1153,6 +1190,10 @@ function importProgress(ev){
       if(d.progress){Object.assign(progress,d.progress);sp();}
       if(d.notes){Object.assign(notes,d.notes);sn();}
       if(d.attaches){Object.assign(attaches,d.attaches);sa();}
+      if(d.evals){Object.entries(d.evals).forEach(([k,v])=>{
+        const dayNum=parseInt(k.replace('day_',''));
+        if(dayNum&&v) localStorage.setItem('fich-eval-'+dayNum,JSON.stringify(v));
+      });}
       buildUI(); setActiveTab(curPhase); updateGlobal();
       showToast('Progresso importado!');
     }catch(err){showToast('Erro ao ler o JSON');}

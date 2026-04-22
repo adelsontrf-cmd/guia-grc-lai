@@ -1,0 +1,22 @@
+# Mapas Mentais — docs/mapas/
+
+Coloque aqui os 18 arquivos PNG dos mapas mentais com os nomes exatos:
+
+mapa-01-grc-triade-articulada-enap.png
+mapa-02-iso31000-tres-componentes.png
+mapa-03-coso-erm-2017-cinco-componentes.png
+mapa-04-decreto-9203-marco-normativo.png
+mapa-05-decreto-11529-governanca-atualizada.png
+mapa-06-relatorio-avaliacao-decreto-9203.png
+mapa-07-ibgc-principios-setor-publico.png
+mapa-08-compliance-programa-tres-linhas.png
+mapa-09-ocde-integridade-publica-principios.png
+mapa-10-power-organized-uncertainty-tensao.png
+mapa-11-revisao-sistematica-lai-silva-matta.png
+mapa-12-panorama-lai-esferas-governo.png
+mapa-13-reed-avaliacao-lai-brasileira.png
+mapa-14-klein-gestao-riscos-accountability.png
+mapa-15-iso31000-roadmap-implementacao.png
+mapa-16-lai-lei-12527-aneis-conceituais.png
+mapa-17-decreto-7724-fluxo-pedido-recurso.png
+mapa-18-tcu-referencial-governanca-igg.png
